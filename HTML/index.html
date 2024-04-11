@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head title="Mi compañia">
+        <title>HTML tutorial</title><!--Esto se ve en la parte de arriba de la ventana-->
+    </head>
+    <a href="blog.html">Ir a Blog</a>
+    <body>
+        <h1>Titulo 1</h1><!--Titulos letras garandes en negrita con espacio alrededor-->
+        <h2>Titulo 2</h2>
+        <h3>Titulo 3</h3>
+        <h4>Titulo 4</h4>
+        <h5>Titulo 5</h5>
+        <h6>Titulo 6</h6>
+        <p><!--Parrafo normal de to la life. las etiquetas inline y las block se pueden modificar en css o sea las resaltaciones se pueden cambiar el estilo-->
+            Lorem ipsum dolor sit amet <strong>etiqueta strong me resalta</strong> elit. Maxime, quis!
+        </p>
+        <p>
+            Lorem ipsum <em>etiqueta em me pone en cursiva</em> consectetur adipisicing elit. Veniam quos error eum. Nulla reiciendis autem maiores nemo dolor magni, a rerum tempora, voluptates enim quos dolorum iusto eum sed labore.
+        </p>
+        <p>
+            Lorem ipsum<a href="http://google.com" target="_blank"> enlace externo </a> asdw  <a href="http://google.com">enlace en la misma pestaña</a> amet consectetur adipisicing elit. Quasi aut praesentium laborum nam incidunt eaque itaque explicabo nemo iusto! Quam facilis quas deserunt? Rem laboriosam temporibus adipisci dolorem iure illo!
+        </p>
+        <!--listas ul y ol-->
+        <ul>
+            <li>elemento 1</li>
+            <li>elemento 2</li>
+            <li>elemento 3</li>
+        </ul>
+        <ol>
+            <li>elemento 1</li>
+            <li>elemento 2</li>
+            <li>elemento 3</li>
+        </ol>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>ID</th>
+                    <th>edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Endry</th>
+                    <th>02033075448</th>
+                    <th>22</th>
+                </tr>
+                <tr>
+                    <th>Helen</th>
+                    <th>02100366510</th>
+                    <th>21</th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr><!--da una linea-->
+        <form action="procces.php" method="post">
+            <label>Nombre</label>
+            <input type="text" name="x">
+            <label>Apellido</label>
+            <input type="text" name="y">
+            <div>
+                <br>
+                <label>Nombre con div</label>
+                <input type="text" name="xv">
+            </div>
+            <br>
+            <div>
+                <label>Apellido con div</label>
+            <input type="text" name="yv">
+            </div>
+            <br>
+            <label>Email</label>
+            <input type="email" name="x"><!--tag con tipo email para validar-->
+            <!--area para textos-->
+            <br>
+            <br>
+            <label>Mensaje</label>
+            
+            <textarea name="mes"></textarea>
+            <br>
+            <!--selector-->
+            <br>
+            <label>genero</label>
+            <select name="genero">
+                <option value="male">masculino</option>
+                <option value="fem">femenino</option>
+                <option value="anot">otro</option>
+            </select>
+            <br>
+            <br>
+            <label>Edad</label>
+            <input type="number" name="age" value="30">
+            <br>
+            <br>
+            <label>Edad con marcador</label> <!--se usa el marcador para que se que el valor asignado-->
+            <input type="number" name="agem" placeholder="30">
+            <br>
+            <br>
+            <label>Fecha de nacimiento</label>
+            <input type="date" name="nacimiento">
+            <br>
+            <br>
+            <!--boton-->
+            <input type="submit" name="sub" value="boton" >
+        </form>
+        <hr>
+        <br>
+        <br>
+        <!--boton-->
+        <button click="lo que pasa cuando das click se hace en java">Clickeame</button>        
+        <br>
+        <br>
+        <!--imagenes-->
+        <br>
+        <br>
+        <a href="images/witcher.png">
+            <img src="images/witcher.png" alt="se muestra este texto si no se encuentra la imagen" width="500"><!--width ajusta el tamaño de la imagen pero es mejor usar css-->
+        </a>
+        <!--citas-->
+        <blockquote cite="https://www.youtube.com/watch?v=UB1O30fR-EE&list=PLillGF-RfqbYeckUaD1z6nviTp31GLTH8&index=4">
+            lorem 3
+        </blockquote>
+        <!--muestra la cita en develops-->
+        <!--abreviaturas-->
+        <p>Trabajo en el <abbr title="Centro de Investigaciones Hidráulicas">CIH</abbr> y me va bien</p>
+        <!--cursivita-->
+        <p><cite>cuba</cite></p>
+    </body>
+</html>
