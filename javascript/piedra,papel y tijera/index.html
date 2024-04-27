@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="seccion1">
+        <div class="header"><h1>Piedra, Papel y Tijeras!</h1></div>
+        <div id="container">
+            <button class="piedra"><img src="images/piedra.png" alt="una piedra"></button>
+            <button class="papel"><img src="images/papel.png" alt="un papel"></button>
+            <button class="tijeras"><img src="images/tijeras.png" alt="unas tijeras"></button>
+        </div>
+        <div class="header resultado"><h1></h1></div>
+    </div>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>-</th>
+            <th>CPU</th>
+        </tr>
+        <tr class="conteo">
+            <td class="user">0</td>
+            <td>-</td>
+            <td class="cpu">0</td>
+        </tr>
+    </table>
+    <div class="final"></div>
     <script src="script.js"> </script>
 </body>
 </html>

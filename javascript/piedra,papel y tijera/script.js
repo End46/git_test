@@ -11,71 +11,133 @@ function getcomputedchoice(){
     }
 }
 
-function getuserchoice (){
-    do{
-        let user_choice=prompt('Escoja:\npiedra,papel o tijeras.');
-        user_choice=user_choice.toLowerCase();
-        if (user_choice=='piedra'||user_choice=='tijeras'||user_choice=='papel'){
-            return user_choice;
-        }else{
-            alert('\nPor favor elija entre piedra papel o tijeras.\n')
-        }
-    }while(true);
-}
 
-function one_round(){
-    let user_choice=getuserchoice();
-    if (getcomputedchoice()=='tijeras'){
+function one_round(user_choice){
+    let cpuChoice = getcomputedchoice();
+    if (cpuChoice=='tijeras'){
         switch(user_choice){
             case 'tijeras':
-                return 'Empate: Tijeras vs Tijeras'
+                resultado.textContent="La computadora elige tijeras. Empate";
+                return 'empate'
             case 'piedra':
-                return 'Victoria!: La Piedra rompe las Tijeras'
+                resultado.textContent="La computadora elige tijeras. Victoria la piedra rompe las tijeras.";
+                return 'victoria'
             case 'papel':
-                return 'Derrota : Las Tijeras cortan el Papel'
+                resultado.textContent="La computadora elige tijeras. Derrota las tijeras cortan el papel";
+                return 'derrota'
         }
-    }else if (getcomputedchoice()=='papel'){
+    }else if (cpuChoice=='papel'){
         switch(user_choice){
             case 'tijeras':
-                return 'Victoria!: las Tijeras cortan el Papel'
+                resultado.textContent="La computadora elige papel. Victoria las tijeras cortan el papel.";
+                return 'victoria'
             case 'piedra':
-                return 'Derrota : El Papel envuelve a la Piedra'
+                resultado.textContent="La computadora elige papel. Derrota el papel envuelve a la piedra";
+                return 'derrota'
             case 'papel':
-                return 'Empate: Papel vs Papel'
+                resultado.textContent="La computadora elige papel. Empate";
+                return 'empate'
         }
     }else{
         switch(user_choice){
             case 'tijeras':
-                return 'Derrota : La Piedra rompe las Tijeras'
+                resultado.textContent="La computadora elige piedra. Derrota la piedra rompe las tijeras";
+                return 'derrota'
             case 'piedra':
-                return 'Empate: Piedra vs Piedra'
+                resultado.textContent="La computadora elige piedra. Empate";
+                return 'empate'
             case 'papel':
-                return 'Victoria!: El Papel envuelve a la Piedra'
+                resultado.textContent="La computadora elige piedra. Victoria el papel envuelve a la piedra";
+                return 'victoria'
         }
     }
 }
 
-function get_rounds(){
-    do{
-        let rounds=prompt('Introduzca la cantidad de rondas que desea jugar.');
-        if (isNaN(rounds)){
-            alert('Por favor introduzca valor numérico.')
-        }else{
-            rounds= Number(rounds);
-            return rounds;
-        }
-        }while(true);
-}
 
-function playGame(){
-    const rounds=get_rounds();
-    
-    for(let i=0;i<rounds;i++){
-        alert(one_round());
+let band = true;
+
+const piedra = document.querySelector(".piedra");
+const papel = document.querySelector(".papel");
+const tijeras = document.querySelector(".tijeras");
+const resultado = document.querySelector(".resultado");
+const CeldaUser= document.querySelector(".user");
+const CeldaCpu= document.querySelector(".cpu");
+
+let ConteoUser=0;
+let ConteoCpu=0;
+
+piedra.addEventListener("click",()=>{
+    if(ConteoUser == 5 ){
+        resultado.textContent="Ha acumlado 5 puntos. Ha GANADO!!! :)"
+        ConteoCpu=0;
+        ConteoUser=0;
+        CeldaCpu.textContent=ConteoCpu;
+        CeldaUser.textContent=ConteoUser;
+}else if(ConteoCpu == 5){
+        resultado.textContent="La computadora ha acumulado 5 puntos. Ha perdido :(";
+        ConteoCpu=0;
+            ConteoUser=0;
+            CeldaCpu.textContent=ConteoCpu;
+            CeldaUser.textContent=ConteoUser;
+}else{
+    let message=one_round('piedra');
+    if (message == 'victoria'){
+        ConteoUser++;
+        CeldaUser.textContent=ConteoUser;
+    }else if(message == 'derrota'){
+        ConteoCpu++;
+        CeldaCpu.textContent=ConteoCpu;
     }
-
-    alert('Fin del juego.');
 }
+});
 
-alert('Piedra,papel y tijeras.');
-playGame();
+papel.addEventListener("click",()=>{
+    if(ConteoUser == 5 ){
+        resultado.textContent="Ha acumlado 5 puntos. Ha GANADO!!! :)"
+        ConteoCpu=0;
+        ConteoUser=0;
+        CeldaCpu.textContent=ConteoCpu;
+        CeldaUser.textContent=ConteoUser;
+}else if(ConteoCpu == 5){
+        resultado.textContent="La computadora ha acumulado 5 puntos. Ha perdido :(";
+        ConteoCpu=0;
+            ConteoUser=0;
+            CeldaCpu.textContent=ConteoCpu;
+            CeldaUser.textContent=ConteoUser;
+}else{
+    let message=one_round('papel');
+    if (message == 'victoria'){
+        ConteoUser++;
+        CeldaUser.textContent=ConteoUser;
+    }else if(message == 'derrota'){
+        ConteoCpu++;
+        CeldaCpu.textContent=ConteoCpu;
+    }
+}
+});
+
+tijeras.addEventListener("click",()=>{
+    if(ConteoUser == 5 ){
+        resultado.textContent="Ha acumlado 5 puntos. Ha GANADO!!! :)"
+        ConteoCpu=0;
+        ConteoUser=0;
+        CeldaCpu.textContent=ConteoCpu;
+        CeldaUser.textContent=ConteoUser;
+}else if(ConteoCpu == 5){
+        resultado.textContent="La computadora ha acumulado 5 puntos. Ha perdido :(";
+        ConteoCpu=0;
+            ConteoUser=0;
+            CeldaCpu.textContent=ConteoCpu;
+            CeldaUser.textContent=ConteoUser;
+}else{
+    let message=one_round('tijeras');
+    if (message == 'victoria'){
+        ConteoUser++;
+        CeldaUser.textContent=ConteoUser;
+    }else if(message == 'derrota'){
+        ConteoCpu++;
+        CeldaCpu.textContent=ConteoCpu;
+    }
+}
+});
+
