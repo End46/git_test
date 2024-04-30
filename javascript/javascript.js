@@ -2,13 +2,13 @@
 
 message='Hello';*/
 
-let message='Helen!';
+let message='okok!';
 
 alert(message);
 
 let user='John',age=25;
 
-let x=" monga";
-let y=" te amo";
+let x=" mokok";
+let y=" llll";
 
 alert(message+x+y);
